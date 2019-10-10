@@ -1,5 +1,6 @@
 class RealtiesController < ApplicationController
   before_action :set_realty, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_account!, only: [:new, :create, :destroy]
 
   # GET /realties
   # GET /realties.json
@@ -25,6 +26,7 @@ class RealtiesController < ApplicationController
   # POST /realties.json
   def create
     @realty = Realty.new(realty_params)
+    @realty.account_id = current_account.id
 
     respond_to do |format|
       if @realty.save
