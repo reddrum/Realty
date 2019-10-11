@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @realty.name %>
@@ -25,5 +23,5 @@
   <%= @realty.bathrooms %>
 </p>
 
-<%= link_to 'Edit', edit_realty_path(@realty) %> |
-<%= link_to 'Back', realties_path %>
+<%= link_to 'Edit', edit_realty_path(@realty), class: "btn btn-success" %>
+<%= link_to 'Cancel', realties_path, class: "btn btn-primary" %>
