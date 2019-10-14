@@ -1,7 +1,12 @@
 <% @realties.each do |realty| %>
-  <div class="col-3">
-    <%= realty_thumbnail realty%>
-    <h3><%= realty.name %></h3>
+  <div class="col-4">
+    <%= link_to(realty_thumbnail(realty), realty_path(realty))%>
+    <h3 class="h5 mt-3"><%= realty.name %></h3>
     <p><%= realty.address %></p>
+    <div class="amenities">
+      <span><i data-feather="users"></i></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>  
 <% end %>
