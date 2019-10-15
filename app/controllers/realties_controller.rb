@@ -12,6 +12,7 @@ class RealtiesController < ApplicationController
   # GET /realties/1
   # GET /realties/1.json
   def show
+    @agent = @realty.account
   end
 
   # GET /realties/new

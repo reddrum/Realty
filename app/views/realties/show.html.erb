@@ -1,27 +1,37 @@
-<p>
-  <strong>Name:</strong>
-  <%= @realty.name %>
-</p>
+<div class="realty-main-photo" style="background-image:url('<%= realty_photo_url @realty %>')">
+  <div class="photo-overlay">
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <p>
+        <strong>Name:</strong>
+        <%= @realty.name %>
+      </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @realty.address %>
-</p>
+      <p>
+        <strong>Address:</strong>
+        <%= @realty.address %>
+      </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @realty.price %>
-</p>
+      <p>
+        <strong>Price:</strong>
+        <%= @realty.price %>
+      </p>
 
-<p>
-  <strong>Rooms:</strong>
-  <%= @realty.rooms %>
-</p>
+      <p>
+        <strong>Rooms:</strong>
+        <%= @realty.rooms %>
+      </p>
 
-<p>
-  <strong>Bathrooms:</strong>
-  <%= @realty.bathrooms %>
-</p>
-
-<%= link_to 'Edit', edit_realty_path(@realty), class: "btn btn-success" %>
-<%= link_to 'Cancel', realties_path, class: "btn btn-primary" %>
+      <p>
+        <strong>Bathrooms:</strong>
+        <%= @realty.bathrooms %>
+      </p>
+    </div>
+    <div class="col-4">
+      <%= render "realties/agent_details" %>
+    </div>
+  </div>
+</div>

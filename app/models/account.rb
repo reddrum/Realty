@@ -5,4 +5,12 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable, :confirmable
 
   has_many :realties
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def company
+    "Company"
+  end
 end

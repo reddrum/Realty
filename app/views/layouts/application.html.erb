@@ -13,10 +13,11 @@
 
   <body id="<%= controller.controller_name %>" class="<%= controller.controller_name %> <%= "show-sidebar" if @show_sidebar.present? %>">
     <% if @show_sidebar.nil? %>
-    <header>
-      <%= render "layouts/nav/public" %>
+      <header>
+        <%= render "layouts/nav/public" %>
+      </header>
+      
       <%= yield %>
-    </header>
     <% else %>
       <%= render "layouts/nav/dashboard" %>
 
@@ -31,7 +32,7 @@
     <% end %>
 
 
-    <%# <%= render "layouts/footer" %> %>
+    <%# <%= render "layouts/footer" %> 
 
     <div id="notifications"><%= notice %></div>
 
