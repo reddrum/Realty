@@ -2,36 +2,63 @@
   <div class="photo-overlay">
   </div>
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col-8">
-      <p>
-        <strong>Name:</strong>
-        <%= @realty.name %>
-      </p>
+      <div class="row">
+        <div class="col-6">
+          <p class="mb-0"><%= @realty.address %></p>
+          <p class="h2"><%= @realty.price > 0 ? number_to_currency(@realty.price, precision: 0) : "For sale" %></p>
+        </div>
+        <div class="col-6 text-center">
+          <div class="row mr-3 bg-light p-3">
+            <div class="col-4">
+              <p class="m-0"><strong>Rooms</strong></p>
+              <span class="lead"><%= @realty.rooms %></span>
+            </div>
+            <div class="col-4">
+              <p class="m-0"><strong>Bathrooms</strong></p>
+              <span class="lead"><%= @realty.bathrooms %></span>
+            </div>
+            <div class="col-4">
+              <p class="m-0"><strong>Parking</strong></p>
+              <span class="lead"><%= @realty.parking_spaces %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>
+            <strong>Name:</strong>
+            <%= @realty.name %>
+          </p>
 
-      <p>
-        <strong>Address:</strong>
-        <%= @realty.address %>
-      </p>
+          <p>
+            <strong>Address:</strong>
+            <%= @realty.address %>
+          </p>
 
-      <p>
-        <strong>Price:</strong>
-        <%= @realty.price %>
-      </p>
+          <p>
+            <strong>Price:</strong>
+            <%= @realty.price %>
+          </p>
 
-      <p>
-        <strong>Rooms:</strong>
-        <%= @realty.rooms %>
-      </p>
+          <p>
+            <strong>Rooms:</strong>
+            <%= @realty.rooms %>
+          </p>
 
-      <p>
-        <strong>Bathrooms:</strong>
-        <%= @realty.bathrooms %>
-      </p>
+          <p>
+            <strong>Bathrooms:</strong>
+            <%= @realty.bathrooms %>
+          </p>
+        
+      </div>
     </div>
-    <div class="col-4">
-      <%= render "realties/agent_details" %>
-    </div>
+  </div>
+  <div class="col-4">
+    <%= render "realties/agent_details" %>
   </div>
 </div>
