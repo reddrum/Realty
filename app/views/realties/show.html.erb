@@ -28,33 +28,20 @@
           </div>
         </div>
       </div>
+      <div class="row border-top border-bottom mt-5 mb-5 pt-4 pb-4">
+        <div class="col-6">
+          <strong><%= link_to "Est. Monthly Repayments of #{number_to_currency((@realty.price / 360), precision: 0)}", "#", class: "text-success" %></strong>
+        </div>
+        <div class="col-6 text-right">
+          <strong><%= link_to "Can I afford this realty?", "#", class: "text-success" %></strong>
+        </div>
+      </div>
       <div class="row">
         <div class="col">
-          <p>
-            <strong>Name:</strong>
-            <%= @realty.name %>
-          </p>
+          <p class="h3">Realty Description</p>
+          <p><%= @realty.name %></p>
 
-          <p>
-            <strong>Address:</strong>
-            <%= @realty.address %>
-          </p>
-
-          <p>
-            <strong>Price:</strong>
-            <%= @realty.price %>
-          </p>
-
-          <p>
-            <strong>Rooms:</strong>
-            <%= @realty.rooms %>
-          </p>
-
-          <p>
-            <strong>Bathrooms:</strong>
-            <%= @realty.bathrooms %>
-          </p>
-        
+          <%= simple_format @realty.details %>
       </div>
     </div>
   </div>

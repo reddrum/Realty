@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'simple_form', '~> 5.0', '>= 5.0.1'
 
 gem 'carrierwave', '~> 2.0', '>= 2.0.2'
 gem 'fog', '~> 2.2'
