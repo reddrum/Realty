@@ -7,3 +7,12 @@
   background-size: cover;
   margin-bottom: 40px;
 }
+
+#real-details {
+  height: 150px;
+  overflow: hidden;
+
+  &.open {
+    height: auto;
+  }
+}
