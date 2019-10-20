@@ -1,0 +1,29 @@
+<% realties.each do |realty| %>
+  <div class="col-4">
+    <div class="realty border">
+
+        <div class="realty-thumb" style="background-image: url(<%= realty_thumbnail_url(realty) %>)">
+          <%= link_to "", realty_path(realty) %>
+        </div>
+
+        <div class="realty-summary mb-2 p-3">
+          <h3 class="h5"><%= link_to realty.name, realty_path(realty), class: "text-dark" %></h3>
+
+          <span class="mr-2">
+            <%= realty.rooms %>
+            <i class="fas fa-bed text-muted ml-1"></i>
+          </span>  
+          <span class="mr-2">
+            <%= realty.bathrooms %>
+            <i class="fas fa-bath text-muted ml-1"></i>
+          </span>
+          <span class="mr-2">
+            <%= realty.parking_spaces %>
+            <i class="fas fa-car text-muted ml-1"></i>
+          </span>
+
+          <p class="mt-2"><%= realty.address %></p>
+        </div>
+    </div>
+  </div>  
+<% end %>

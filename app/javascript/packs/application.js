@@ -10,6 +10,7 @@ global.$ = global.jQuery = jQuery
 window.$ = window.jQuery = jQuery
 
 require("bootstrap")
+require("@fortawesome/fontawesome-free")
 
 require("./includes/realties");
 // Uncomment to copy all static images under ../images to the output folder and reference

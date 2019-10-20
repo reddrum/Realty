@@ -13,6 +13,7 @@ class RealtiesController < ApplicationController
   # GET /realties/1.json
   def show
     @agent = @realty.account
+    @agent_realties = Realty.where(account_id: @agent.id).where.not(id: @realty.id)
   end
 
   # GET /realties/new
