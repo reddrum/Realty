@@ -9,7 +9,7 @@ module ApplicationHelper
 
     flash.each do |type, message|
       type = 'success' if type == 'notice'
-      type = 'error' if type == 'alert' || type = 'danger'
+      type = 'error' if type == 'alert' || type == 'danger'
       text = "toastr['#{type}']('#{message}');"
       flash_messages << text.html_safe unless message.blank?
     end
