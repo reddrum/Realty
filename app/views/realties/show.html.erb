@@ -7,29 +7,30 @@
   <div class="row">
     <div class="col-md-8">
       <div class="row">
-        <div class="col-lg-6">
-          <p class="mb-0"><%= @realty.address %></p>
+        <div class="col-lg-5">
+          <p class="h4 mb-0"><%= @realty.for_sale? ? "For Sale" : "For Rent" %></p>
+          <p class="mb-2"><%= @realty.address %></p>
           <p class="h2 mb-3">
             <% if @realty.for_sale? %>
-              <%= @realty.price > 0 ? number_to_currency(@realty.price, precision: 0) : "For sale" %>
+              <%= @realty.price > 0 ? number_to_currency(@realty.price, precision: 0) : "Offers Accepted" %>
             <% else %>
-              <%= @realty.price > 0 ? number_to_currency(@realty.price, precision: 0) : "For rent" %> / month
+              <%= @realty.price > 0 ? number_to_currency(@realty.price, precision: 0) : "Open for" %> / month
             <% end %>
           </p>
         </div>
-        <div class="col-lg-6 text-center">
-          <div class="row mr-lg-3 mt-sm-3 bg-light p-3">
+        <div class="col-lg-7 text-center">
+          <div class="row mt-sm-3 bg-light p-3">
             <div class="col-4">
-              <p class="m-0"><strong>Rooms</strong></p>
-              <span class="lead"><%= @realty.rooms %></span>
+              <i class="fas fa-bed text-muted ml-1"></i><br />
+              <small><%= @realty.rooms %> Bedrooms</small>
             </div>
             <div class="col-4">
-              <p class="m-0"><strong>Bathrooms</strong></p>
-              <span class="lead"><%= @realty.bathrooms %></span>
+              <i class="fas fa-bath text-muted ml-1"></i><br />
+              <small><%= @realty.bathrooms %> Bathrooms</small>
             </div>
             <div class="col-4">
-              <p class="m-0"><strong>Parking</strong></p>
-              <span class="lead"><%= @realty.parking_spaces %></span>
+              <i class="fas fa-car text-muted ml-1"></i><br />
+              <small><%= @realty.parking_spaces %> Parking</small>
             </div>
           </div>
         </div>
@@ -38,6 +39,8 @@
         <div class="col-6">
           <% if @realty.for_sale? %>
             <strong><%= link_to "Est. Monthly Repayments of #{number_to_currency((@realty.price - (@realty.price * 0.1)) / 360, precision: 0)}", "#", class: "text-success" %></strong>
+          <% else %>
+            <strong>Available from <%= @realty.available_date.strftime("%a") %>, <%= @realty.available_date.day.ordinalize %>, <%= @realty.available_date.strftime("%B") %></strong>
           <% end %>
         </div>
         <div class="col-6 text-right">
@@ -60,6 +63,8 @@
     </div>
     <div class="col-md-4">
       <%= render "realties/agent_details" %>
+
+      <iframe class="ml-lg-4 mt-3" width="320" height="240" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=#&q=<%= @realty.address.to_param %>" allowfullscreen></iframe>
     </div>
   </div>
 </div>
