@@ -1,5 +1,10 @@
 $(function(){
 
+  $("#show-tel").on("click", function(){
+    var $this = $(this);
+    $this.find("span").text( $this.data("telephone") );
+  });
+
   $("#toggleDetails").on("click", function(){
     var details = $("#real-details");
     details.toggleClass("open");
@@ -9,4 +14,11 @@ $(function(){
       $(this).text("Show more");
     }
   });
+
+  $('#contact-modal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var modal = $(this);
+  })
+
 });
+

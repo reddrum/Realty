@@ -72,7 +72,12 @@
 <section class="mt-5 mb-5">
     <div class="container">
       <div class="row">
+        <div class="col-12">
+          <p class="h3 mb-3">Other realties</p>
+        </div>
         <%= render "realties/list", realties: @agent_realties %>
       </div>
     </div>
 </section>
+
+<%= render "realties/send_email_modal" %>
