@@ -5,6 +5,9 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 config/application.yml
+/.idea/
+/.generators
+/.rakeTasks
 
 # Ignore bundler config.
 /.bundle
