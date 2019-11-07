@@ -6,5 +6,6 @@ class PublicController < ApplicationController
     end
     
     @realties = Realty.latest
+    @posts = Post.latest
   end
 end
